@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airplane Simulator</title>
+    <link rel="icon" href="data:," />
+    <style>
+      html, body { margin: 0; height: 100%; background: #0b1220; overflow: hidden; }
+      #app { position: fixed; inset: 0; }
+      canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      #hud { pointer-events: none; }
+      #start {
+        position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+        background: rgba(10, 16, 28, 0.72); color: #fff; text-align: center; cursor: pointer;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      #start h1 { font-size: 44px; margin: 0 0 8px; }
+      #start p { margin: 6px 0; font-size: 18px; opacity: 0.92; }
+      #start .go { margin-top: 22px; font-size: 22px; font-weight: 700; color: #ffbe3c; }
+      #start kbd { background: rgba(255,255,255,0.16); border-radius: 4px; padding: 1px 7px; font: inherit; font-size: 15px; }
+      #start .box { max-width: 640px; padding: 0 20px; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="view"></canvas>
+      <canvas id="hud"></canvas>
+      <div id="start">
+        <div class="box">
+          <h1>Airplane Simulator</h1>
+          <p>Fly four aircraft over five maps with seas, lakes and mountains.</p>
+          <p><kbd>W</kbd>/<kbd>S</kbd> pitch &nbsp; <kbd>A</kbd>/<kbd>D</kbd> bank &nbsp; <kbd>Shift</kbd>/<kbd>Ctrl</kbd> or <kbd>E</kbd>/<kbd>Q</kbd> throttle</p>
+          <p><kbd>G</kbd> landing gear &nbsp; <kbd>B</kbd> air brake &nbsp; <kbd>C</kbd> aircraft &nbsp; <kbd>N</kbd> map &nbsp; <kbd>P</kbd> view</p>
+          <p><kbd>Space</kbd> pause &nbsp; <kbd>R</kbd> restart &nbsp; <kbd>M</kbd> mute &nbsp; <kbd>H</kbd> help</p>
+          <p class="go">Click or press any key to fly</p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
